@@ -167,7 +167,8 @@ Snippy is a tool for rapid bacterial SNP calling and core genome alignments. Sni
 
 If we give Snippy an annotated reference, it will silently run a tool called SnpEff which will figure out the effect of any changes on the genes and other features. If we just give Snippy the reference sequence alone without the annotations, it will not run SnpEff.
 
-We have an annotated reference and so will use it in this case.
+We have an annotated reference built from the inferred *M. tuberculosis* [ancestral reference genome](https://zenodo.org/record/3497110) and the
+gene annotation from the [H37Rv strain](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3) so will use it in this case.
 
 > ### {% icon hands_on %} Hands-on: Run Snippy
 >
@@ -202,7 +203,41 @@ We have an annotated reference and so will use it in this case.
 >    {: .question}
 {: .hands_on}
 
-RECAP: So far we have taken our sample reads, cleaned them up a bit, compared them with our reference sequence and then called variants (SNPs) between our sample and the reference genome.
+RECAP: So far we have taken our sample reads, cleaned them up a bit, checked for taxonomic assocation, compared the reads with our reference sequence and then called variants (SNPs and indels) between our sample and the reference genome. We have tried to mitigate a few errors along the way:
+
+1. Sequencing errors: these were addressed by the quality trimming step
+2. Sample contamination: we used `kraken2` to assess the extent of this problem in our sample
+3. Appropriate choice of a reference genome: we used a genome that is inferred to be ancestral to all *M. tuberculosis* for our analysis and the diversity within Mtb is limited enough for us to rely on a single reference genome for the entire species.
+4. Quality filtering in the mapping and variant calling stage: Tools like `bwa-mem` and `freebayes` judge the quality of their predictions, and `snippy` performs some filtering on variant calling predictions.
+
+We still cannot entirely trust the proposed variants. In particular, there are regions of the *M. tuberculosis* genome that are difficult to effectively map reads to. These include the PE/PPE/PGRS genes, which are highly repetitive, and the IS (insertion sequence sites). Secondly, when an insertion or deletion (indel) occurs in our sample relative to the reference it can cause apparent, but false, single nucleotide variants to appear near the indel. Finally where few reads map to a region of the reference genome, either because of a sequence deletion or because of a high GC content in the genomic region, we cannot be confident about the quality of variant calling in the region. The `TB Variant Filter` can help filter out variants based on a variety of criteria, including those listed above.
+
+> ### {% icon hands_on %} Hands-on: Run Snippy
+> 1. **TB Variant Filter**: {% icon tool %} with the following parameters
+>   - *"Filters to apply"*: Select `Filter variants by region`, `Filter variants close to indels` and `Filter sites by read alignment depth`.
+> XXX: question here? Maybe how many variants remain after filtering?
+{: .hands_on}
+
+Now that we have a collection of *high quality variants* we can search them against variants known to be associated with drug resistance. The *TB Profiler* tool does this using a database of variants curated by Dr Jody Phelan at the London School of Hygiene and Tropical Medicine. It can do its own mapping and variant calling but also accepts mapped reads in BAM format as input. It does its own variant calling and filtering.
+
+> ### {% icon hands_on %} Hands-on: Run TB Profiler
+> 1. **TB-Profiler profile**: {% icon_tool %} with the following parameters
+>   - *"Input File Type"*: Set to BAM
+> XXX: questions here?
+{: .hands_on}
+
+Finally, TB Variant Report use the COMBAT-TB [neodb](https://neodb.sanbi.ac.za/browser/) [database](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btz658/5554700) of *M. tuberculosis* genome annotation to annotate variants in Mtb. It also takes the output of *TB Profiler* and produces a neat report that is easy to browse and search.
+
+> ### {% icon hands_on %}: Hands-on: Run TB Variant Report
+> 1. **TB Variant Report**: {% icon_tool %} with the JSON produced by TB profiler and the filtered VCF from TB variant filter
+>
+> XXX: Examine the drug resistance report - which lineage is this sample? Which drugs might not work on this sample?
+> XXX: Look at the HTML report from TB Variant Report - what variants are in Rv1908c (katG)? What is their impact? Click on the position noted for the variant and explore the *neodb* interface. Which other genes does Rv1908c (katG)
+{: .hands_on}
+
+XXX: Run JBrowse, examine evidence for a SNP.
+
+
 
 
 
