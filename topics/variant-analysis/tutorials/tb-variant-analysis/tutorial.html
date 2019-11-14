@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>M. tuberculosis Variant Analysis</title>
+        
+        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
+        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
+        <link rel="stylesheet" href="/training-material/assets/css/font-awesome.css">
+        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
+        <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
+
+        
+        
+        
+        
+        
+        <meta name="description" content="Genetic differences (variants) between healthy and diseas..." />
+        <meta property="og:title" content="Galaxy Training: M. tuberculosis Variant Analysis" />
+        <meta property="og:description" content="Genetic differences (variants) between healthy and diseas..." />
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+    </head>
+    <body data-spy="scroll" data-target="#toc">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/training-material/">
+                <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
+                Galaxy Training!
+            </a>
+
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="top-navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/topics/variant-analysis" title="Go back to list of tutorials">
+                            <i class="fa fa-folder-o" aria-hidden="true"></i><span class="visually-hidden">topic</span> Variant Analysis
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="EN">
+                            EN
+                        </a>
+                        <div class="dropdown-menu">
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
+                                FR
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
+                                JA
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
+                                ES
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
+                                PT
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fvariant-analysis%2Ftutorials%2Ftb-variant-analysis%2Ftutorial.html&edit-text=&act=url" title="">
+                                AR
+                            </a>
+                            
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
+        <i class="fa fa-life-ring" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+        <form method="get" action="https://tess.elixir-europe.org/materials">
+            <input type="text" id="search" name="q" value="" style="margin-left: 0.5em;/*! border-radius: 0px; */">
+            <input type="hidden" value="Galaxy Training" name="content_provider">
+            <input type="submit" value="Search on TeSS" style="width: 92%;border-radius: 0px;margin: 0.5em;background: #f47d20;border: 0px;padding: 0.25em;" class="">
+        </form>
+
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/training-material/faq" title="Check our FAQ">
+            FAQ
+        </a>
+        <a class="dropdown-item" href="https://gitter.im/Galaxy-Training-Network/Lobby" title="Chat on Gitter">
+            Chat on Gitter
+        </a>
+        <a class="dropdown-item" href="https://help.galaxyproject.org/" title="Discuss on Galaxy Help">
+            Discuss on Galaxy Help
+        </a>
+    </div>
+</li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/galaxyproject/training-material/edit/master/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.md">
+                            <i class="fa fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container main-content">
+    <script type="application/ld+json">
+        
+
+
+{
+  "@context": "http://schema.org",
+  "@type": "Course",
+  "accessMode": [
+    "textual",
+    "visual"
+  ],
+  "accessModeSufficient": [
+    "textual",
+    "visual"
+  ],
+  "accessibilityControl": [
+    "fullKeyboardControl",
+    "fullMouseControl"
+  ],
+  "accessibilityFeature": [
+    "alternativeText",
+    "tableOfContents"
+  ],
+  "accessibilitySummary": "Short descriptions are present but long descriptions will be needed for non-visual users",
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "students"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Community-Driven Data Analysis Training for Biology",
+    "url": "https://doi.org/10.1016/j.cels.2018.05.012"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "email": "galaxytrainingnetwork@gmail.com",
+    "name": "Galaxy Training Network",
+    "url": "https://galaxyproject.org/teach/gtn/"
+  },
+  "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
+  "headline": "M. tuberculosis Variant Analysis",
+  "inLanguage": {
+    "@type": "Language",
+    "name": "English",
+    "alternateName": "en"
+  },
+  "interactivityType": "mixed",
+  "isAccessibleForFree": true,
+  "license": "/blob//LICENSE.md",
+  "producer": {
+    "@type": "Organization",
+    "email": "galaxytrainingnetwork@gmail.com",
+    "name": "Galaxy Training Network",
+    "url": "https://galaxyproject.org/teach/gtn/"
+  },
+  "provider": {
+    "@type": "Organization",
+    "email": "galaxytrainingnetwork@gmail.com",
+    "name": "Galaxy Training Network",
+    "url": "https://galaxyproject.org/teach/gtn/"
+  },
+  "sourceOrganization": {
+    "@type": "Organization",
+    "email": "galaxytrainingnetwork@gmail.com",
+    "name": "Galaxy Training Network",
+    "url": "https://galaxyproject.org/teach/gtn/"
+  },
+  "courseCode": "variant-analysis / tb-variant-analysis / hands-on",
+  "learningResourceType": "hands-on tutorial",
+  "name": "Hands-on for 'M. tuberculosis Variant Analysis' tutorial",
+  "isPartOf": {
+    "@type": "Course",
+    "name": "M. tuberculosis Variant Analysis",
+    "description": "M. tuberculosis Variant Analysis",
+    "learningResourceType": "tutorial",
+    "interactivityType": "expositive",
+    "provider": {
+      "@type": "Organization",
+      "email": "galaxytrainingnetwork@gmail.com",
+      "name": "Galaxy Training Network",
+      "url": "https://galaxyproject.org/teach/gtn/"
+    }
+  },
+  "url": "https://galaxyproject.github.io//training-material/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html",
+  "timeRequired": "PT45M",
+  "keywords": "prokaryote",
+  "description": "M. tuberculosis Variant Analysis\\nThe questions this  addresses are:\n - How do we detect differences between a set of reads from *M. tuberculosis* and a TB reference genome\n\n\\nThe objectives are:\n - How should we filter those variants\n - How can we predict drug resistance from those variants\n - How do we annotate those variants\n\n",
+  "coursePrerequisites": [
+    {
+      "@type": "CreativeWork",
+      "url": "https://galaxyproject.github.io//training-material/topics/introduction/",
+      "name": "Introduction to Galaxy Analyses",
+      "description": "Introduction to Galaxy Analyses",
+      "provider": {
+        "@type": "Organization",
+        "email": "galaxytrainingnetwork@gmail.com",
+        "name": "Galaxy Training Network",
+        "url": "https://galaxyproject.org/teach/gtn/"
+      }
+    },
+    {
+      "@type": "Course",
+      "url": "https://galaxyproject.github.io//training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
+      "name": "Quality Control",
+      "description": "Slides for 'Quality Control' tutorial",
+      "learningResourceType": "slides",
+      "interactivityType": "expositive",
+      "provider": {
+        "@type": "Organization",
+        "email": "galaxytrainingnetwork@gmail.com",
+        "name": "Galaxy Training Network",
+        "url": "https://galaxyproject.org/teach/gtn/"
+      }
+    },
+    {
+      "@type": "Course",
+      "url": "https://galaxyproject.github.io//training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html",
+      "name": "Quality Control",
+      "description": "Hands-on for 'Quality Control' tutorial",
+      "learningResourceType": "hands-on tutorial",
+      "interactivityType": "expositive",
+      "provider": {
+        "@type": "Organization",
+        "email": "galaxytrainingnetwork@gmail.com",
+        "name": "Galaxy Training Network",
+        "url": "https://galaxyproject.org/teach/gtn/"
+      }
+    },
+    {
+      "@type": "Course",
+      "url": "https://galaxyproject.github.io//training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
+      "name": "Mapping",
+      "description": "Slides for 'Mapping' tutorial",
+      "learningResourceType": "slides",
+      "interactivityType": "expositive",
+      "provider": {
+        "@type": "Organization",
+        "email": "galaxytrainingnetwork@gmail.com",
+        "name": "Galaxy Training Network",
+        "url": "https://galaxyproject.org/teach/gtn/"
+      }
+    },
+    {
+      "@type": "Course",
+      "url": "https://galaxyproject.github.io//training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html",
+      "name": "Mapping",
+      "description": "Hands-on for 'Mapping' tutorial",
+      "learningResourceType": "hands-on tutorial",
+      "interactivityType": "expositive",
+      "provider": {
+        "@type": "Organization",
+        "email": "galaxytrainingnetwork@gmail.com",
+        "name": "Galaxy Training Network",
+        "url": "https://galaxyproject.org/teach/gtn/"
+      }
+    }
+  ],
+  "hasPart": [
+
+  ],
+  "mentions": [
+    {
+      "@type": "Thing",
+      "url": "https://doi.org/10.5281/zenodo.3496437",
+      "name": "Training data for M. tuberculosis Variant Analysis tutorial"
+    }
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Peter van Heusden"
+    },
+    {
+      "@type": "Person",
+      "name": "Simon Gladman"
+    },
+    {
+      "@type": "Person",
+      "name": "Thoba Lose"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "name": "Peter van Heusden"
+    },
+    {
+      "@type": "Person",
+      "name": "Simon Gladman"
+    },
+    {
+      "@type": "Person",
+      "name": "Thoba Lose"
+    }
+  ],
+  "about": [
+    {
+      "@type": "CreativeWork",
+      "name": "Variant Analysis",
+      "description": "Genetic differences (variants) between healthy and diseased tissue,\nbetween individuals of a population, or between strains of an organism\ncan provide mechanistic insight into disease processes and the natural\nfunction of affected genes.\n\nThe tutorials in this section show how to detect evidence for\ngenetic variants in next-generation sequencing data, a process termed\nvariant calling.\n\nOf equal importance, they also demonstrate how you can interpret, for\na range of different organisms, the resulting sets of variants by\npredicting their molecular effects on genes and proteins, by\nannotating previously observed variants with published knowledge, and\nby trying to link phenotypes of the sequenced samples to their variant\ngenotypes.\n",
+      "url": "https://galaxyproject.github.io//training-material/topics/variant-analysis/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "http://edamontology.org/topic_0199",
+      "inDefinedTermSet": "http://edamontology.org",
+      "termCode": "topic_0199",
+      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0199"
+    }
+  ]
+}
+    </script>
+
+    <section class="tutorial">
+        <h1 data-toc-skip>M. tuberculosis Variant Analysis</h1>
+        
+
+        <div class="contributors-line">By: 
+
+<a href="/training-material/hall-of-fame#pvanheus" class="contributor-badge"><img src="https://avatars.githubusercontent.com/pvanheus" alt="Peter van Heusden">Peter van Heusden</a>, <a href="/training-material/hall-of-fame#slugger70" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Simon Gladman">Simon Gladman</a>, <a href="/training-material/hall-of-fame#thobalose" class="contributor-badge"><img src="https://avatars.githubusercontent.com/thobalose" alt="Thoba Lose">Thoba Lose</a>
+
+</div>
+        
+        <blockquote class="overview">
+            <h3>Overview</h3>
+            <strong><i class="fa fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</strong>
+            <ul>
+            
+            <li><p>How do we detect differences between a set of reads from <em>M. tuberculosis</em> and a TB reference genome</p>
+</li>
+            
+            </ul>
+
+            <strong><i class="fa fa-bullseye" aria-hidden="true"></i><span class="visually-hidden">objectives</span> Objectives</strong>
+            <ul>
+            
+            <li><p>How should we filter those variants</p>
+</li>
+            
+            <li><p>How can we predict drug resistance from those variants</p>
+</li>
+            
+            <li><p>How do we annotate those variants</p>
+</li>
+            
+            </ul>
+
+            
+            <strong><i class="fa fa-check-circle" aria-hidden="true"></i><span class="visually-hidden">requirements</span> Requirements</strong>
+            <ul>
+            
+    <li>
+    
+        
+        
+        <a href="/training-material/topics/introduction">Introduction to Galaxy Analyses</a>
+        
+    
+    </li>
+
+    <li>
+    
+        
+        
+        <a href="/training-material/topics/sequence-analysis">Sequence analysis</a>
+        
+            <ul>
+                
+                    
+                        
+                    
+                        
+                            
+                            <li> Quality Control:
+                            
+                                <a href="/training-material/topics/sequence-analysis/tutorials/quality-control/slides.html"><i class="fa fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span> slides</a>
+                                
+                            
+                            
+                                
+                                    - <a href="/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html"><i class="fa fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span> hands-on</a>
+                                
+                            
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            
+                            <li> Mapping:
+                            
+                                <a href="/training-material/topics/sequence-analysis/tutorials/mapping/slides.html"><i class="fa fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span> slides</a>
+                                
+                            
+                            
+                                
+                                    - <a href="/training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html"><i class="fa fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span> hands-on</a>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                    
+                
+            </ul>
+        
+    
+    </li>
+
+            
+            </ul>
+            
+
+            
+            <p><strong><i class="fa fa-hourglass-end" aria-hidden="true"></i><span class="visually-hidden">time</span> Time estimation:</strong> 45 minutes</p>
+            
+
+            
+
+            
+            
+
+            
+            <div>
+                <div><strong><i class="fa fa-external-link" aria-hidden="true"></i> Supporting Materials</strong></div>
+                <div id="supporting_materials">
+                    <ul><li><div>
+                        
+                        <div>
+                            <a class="topic-icon" href="/training-material/topics/variant-analysis/slides/introduction.html" title="Introduction slides">
+                                <i class="fa fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span> Introduction Slides
+                            </a>
+                        </div>
+                        
+
+                        
+                        <div>
+                            
+<a class="topic-icon" href="https://doi.org/10.5281/zenodo.3496437">
+    <i class="fa fa-files-o" aria-hidden="true"></i><span class="visually-hidden">zenodo_link</span> Datasets
+</a>
+
+
+                        </div>
+                        
+
+                        
+                        
+
+
+                        
+                    </div></li></ul>
+                </div>
+
+                <p><strong> <i class="fa fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Nov 14, 2019 </p>
+            </div>
+            
+
+        </blockquote>
+
+        <div class="container">
+            <div class="row">
+                <!-- sidebar, which will move to the top on a small screen -->
+                <div class="col-sm-2">
+                    <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+                </div>
+                <div class="col-sm-10">
+                    <h1 class="no_toc" id="introduction">Introduction</h1>
+
+<p>Tuberculosis (TB) is a infectious disease caused by the bacterium <em>Mycobacterium tuberculosis</em>. According to the <a href="https://www.who.int/tb/publications/global_report/en/">WHO</a>, in 2018 there were 10.0 million new cases of TB worldwide and 1.4 million deaths due to the disease, making TB the world’s most deadly infectious disease. The <a href="https://www.ncbi.nlm.nih.gov/pubmed/9634230">publication</a> of the genome of <em>M. tuberculosis H37Rv</em> in 1998 gave researchers a powerful new tool in understanding this pathogen. This genome has been revised since then, with the latest version being available
+as RefSeq entry <a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3/">NC_000962.3</a>. The genome comprises a single circular chromosome of some 4.4 megabases. The H37Rv strain that the genome was sequenced from is a long-preserved laboratory strain, originally <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2132400">isolated</a> from a patient in 1905 and <a href="https://journals.sagepub.com/doi/abs/10.3181/00379727-33-8330P">named</a> as H37Rv in 1935. It is notably different in some genomic <a href="https://www.sciencedirect.com/science/article/pii/S0888754317300617?via%3Dihub">regions</a> from some modern clinical strains but remains the standard reference sequence for <em>M. tuberculosis</em> (Mtb). In a larger context <em>M. tuberculosis</em> is a prominent member of the Mycobacterium Tuberculosis Complex (MTBC).</p>
+
+<p>This group of related species comprises of the 7 <a href="https://www.ncbi.nlm.nih.gov/pubmed/29456241">lineages</a> of human-infecting <em>M. tuberculosis</em> as well as predominantly animal-infecting species such as <em>M. bovis</em> and <em>M. pinnipedii</em>. Two other close relatives of Mtb, <em>M. leprae</em> and <em>M. lepromatosis</em> circulate between humans, causing the disease leprosy. Finally amongst the Mycobacteria there are several other species that live in the environment and can cause human disease. These are the <a href="https://www.ncbi.nlm.nih.gov/pubmed/28345639">Nontuberculous Mycobacteria</a>.</p>
+
+<p>Variation in the genome of <em>M. tuberculosis</em> (Mtb) is associated with changes in phenotype, for example <a href="https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-019-0660-8">drug resistance</a> and virulence. It is also useful for <a href="https://www.frontiersin.org/articles/10.3389/fpubh.2019.00087/full">outbreak investigation</a> as the single nucleotide polymorphisms (SNPs) in a sample can be used to build a phylogeny.</p>
+
+<p>This tutorial will focus on identifying genomic variation in Mtb and using that do explore drug resistance and other aspects of the bacteria.</p>
+
+<p>TO DO:</p>
+
+<ul>
+  <li>TB variant filter</li>
+  <li>TB profiler</li>
+  <li>TB variant report</li>
+</ul>
+
+<h1 id="get-your-data">Get your data</h1>
+
+<p>The data for today is a sample of <em>M. tuberculosis</em> <a href="https://www.ebi.ac.uk/ena/data/view/PRJEB6945">collected</a> from a German <a href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001387">outbreak</a> of tuberculosis. In addition to the bacterial sequence sample we will work with a Genbank format version of the genome of the inferred most recent common <a href="https://zenodo.org/record/3497110">ancestor</a> of the M. tuberculosis complex which is combined with the annotation of the H37Rv reference sequence. This ancestral genome only differs from the H37Rv version 3 genome (<a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3">NC_000962.3</a>) by the insertion of SNPs to try and model the ancestor of all lineages of Mtb.</p>
+
+<p>This data is available at Zenodo using the following <a href="http://doi.org/10.5281/zenodo.3531703">link</a>.</p>
+
+<blockquote class="notranslate hands_on">
+  <h3 id="hands_on-hands-on-get-the-data"><i class="fa fa-pencil" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Get the data</h3>
+
+  <ol>
+    <li>Import the following five files into a new history
+      <ul>
+        <li><a href="https://zenodo.org/record/3531703/files/ERR550641_1.fastq.gz">ERR550641_1.fastq.gz</a></li>
+        <li><a href="https://zenodo.org/record/3531703/files/ERR550641_2.fastq.gz">ERR550641_2.fastq.gz</a></li>
+        <li><a href="https://zenodo.org/record/3531703/files/Mycobacterium_tuberculosis_ancestral_reference.gbk">Mycobacterium_tuberculosis_ancestral_reference.gbk</a></li>
+        <li><a href="https://zenodo.org/record/3531703/files/Mycobacterium_tuberculosis_h37rv.ASM19595v2.45.chromosome.Chromosome.gff3">Mycobacterium_tuberculosis_ancestral_reference.gff3</a></li>
+        <li><a href="https://zenodo.org/record/3497110/files/MTB_ancestor_reference.fasta">MTB_Ancestor_reference.fasta</a></li>
+      </ul>
+
+      <blockquote class="tip">
+
+        <h3 id="tip-tip-importing-data-via-links"><i class="fa fa-lightbulb-o" aria-hidden="true"></i><span class="visually-hidden">tip</span> Tip: Importing data via links</h3>
+
+        <ul>
+          <li>Copy the link location</li>
+          <li>
+            <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fa fa fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>
+          </li>
+          <li>Select <strong>Paste/Fetch Data</strong></li>
+          <li>
+            <p>Paste the link into the text field</p>
+          </li>
+          <li>
+            <p>Press <strong>Start</strong></p>
+          </li>
+          <li><strong>Close</strong> the window</li>
+        </ul>
+
+        <p>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</p>
+
+      </blockquote>
+    </li>
+  </ol>
+
+</blockquote>
+
+<p>If you are using use<span class="notranslate">galaxy</span>.eu for this tutorial, you can start by importing this <a href="https://usegalaxy.eu/u/pvanheus/h/m-tuberculosis-variant-analysis-tutorial">history</a>. Use the ‘+’ button in the top right hand corner and select a meaningful name for the imported history before clicking ‘Import’.</p>
+
+<h1 id="quality-control">Quality control</h1>
+
+<p>This step serves the purpose of identifying possible issues with the raw
+sequenced <span class="notranslate">reads</span> input data before embarking on any “real” analysis steps.</p>
+
+<p>Some of the typical problems with NGS data can be mitigated by preprocessing
+affected sequencing <span class="notranslate">reads</span> before trying to map them to the reference genome.
+Detecting some other, more severe problems early on may at least save you a lot
+of time spent on analyzing low-quality data that is not worth the effort.</p>
+
+<p>Here, we will perform a standard quality check on our input data and only point
+out a few interesting aspects about that data. For a more thorough explanation
+of NGS data quality control, you may want to have a look at the dedicated
+tutorial on <a href="/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html">Quality control</a>.</p>
+
+<blockquote class="notranslate hands_on">
+  <h3 id="hands_on-hands-on-quality-control-of-the-input-datasets"><i class="fa fa-pencil" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Quality control of the input datasets</h3>
+  <ol>
+    <li>Run <strong>FastQC</strong> <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> on each of your six fastq datasets
+      <ul>
+        <li><i class="fa fa-files-o" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Short read data from your current history”</em>: both FASTQ datasets selected with <strong>Multiple datasets</strong></li>
+      </ul>
+
+      <blockquote class="tip">
+
+        <h3 id="tip-tip-select-multiple-datasets"><i class="fa fa-lightbulb-o" aria-hidden="true"></i><span class="visually-hidden">tip</span> Tip: Select multiple datasets</h3>
+
+        <ol>
+          <li>Click on <i class="fa fa-files-o" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <strong>Multiple datasets</strong></li>
+          <li>Select several files by keeping the <kbd>Ctrl</kbd> (or
+<kbd>COMMAND</kbd>) key pressed and clicking on the files of interest</li>
+        </ol>
+      </blockquote>
+
+      <p>When you start this job, four new datasets (one with the calculated raw
+data, another one with an html report of the findings for each input
+dataset) will get added to your history.</p>
+    </li>
+    <li>Use <strong>MultiQC</strong> <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> to aggregate the raw <strong>FastQC</strong> data of all input datasets into one report
+      <ul>
+        <li>In <em>“Results”</em>
+          <ul>
+            <li><em>“Which tool was used generate logs?”</em>: <code class="highlighter-rouge">FastQC</code></li>
+            <li>In <em>“FastQC output”</em>
+              <ul>
+                <li><em>“Type of FastQC output?”</em>: <code class="highlighter-rouge">Raw data</code></li>
+                <li><i class="fa fa-files-o" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“FastQC output”</em>: both <em>RawData</em>
+outputs of <strong>FastQC</strong> <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Inspect the <em>Webpage</em> output produced by the tool</p>
+
+      <blockquote class="question">
+        <h3 id="question-questions"><i class="fa fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
+
+        <ol>
+          <li>Based on the report, do you think preprocessing of the <span class="notranslate">reads</span>
+(trimming and/or filtering) will be necessary before <span class="notranslate">mapping</span>?</li>
+        </ol>
+
+        <blockquote class="solution">
+          <h3 id="solution-solution"><i class="fa fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+
+          <ol>
+            <li>Sequence quality is quite good overall. If anything you might
+consider trimming the 3’ ends of <span class="notranslate">reads</span> (base qualities decline
+slightly towards the 3’ ends) or to filter out the small fraction
+of <span class="notranslate">reads</span> with a mean base quality &lt; 5.
+We will run <strong>Trimmomatic</strong> <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> on the
+fastq datasets in the next step.</li>
+          </ol>
+
+        </blockquote>
+      </blockquote>
+    </li>
+    <li>Use <strong>Trimmomatic</strong> <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> to clean up the <span class="notranslate">reads</span> and remove the poor quality sections.
+      <ul>
+        <li><em>“Single-end or paired-end <span class="notranslate">reads</span>?”</em>: <code class="highlighter-rouge">Paired End (two separate inut files)</code></li>
+        <li><i class="fa fa-files-o" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Input FASTQ file (R1/first of pair)”</em>: <code class="highlighter-rouge">ERR550641_1.fastq.gz</code></li>
+        <li><i class="fa fa-files-o" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Input FASTQ file (R2/second of pair)”</em>: <code class="highlighter-rouge">ERR550641_2.fastq.gz</code></li>
+        <li><em>“+Insert Trimmomatic Operation”</em>
+          <ul>
+            <li><em>“Select Trimmomatic operation to perform”</em>: <code class="highlighter-rouge">Drop <span class="notranslate">reads</span> below a specified length (MINLEN)</code></li>
+            <li><em>“Minimum length of <span class="notranslate">reads</span> to be kept”</em>: <code class="highlighter-rouge">20</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Inspect the output produced by Trimmomatic</p>
+
+      <blockquote class="question">
+        <h3 id="question-questions-1"><i class="fa fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
+
+        <ol>
+          <li>Why are there 4 output read files instead of 2?</li>
+        </ol>
+
+        <blockquote class="solution">
+          <h3 id="solution-solution-1"><i class="fa fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+
+          <ol>
+            <li>There are 4 output files: Forwards paired and single <span class="notranslate">reads</span> and reverse paired and single <span class="notranslate">reads</span>. The single <span class="notranslate">reads</span> come about when one read in a pair of <span class="notranslate">reads</span> has failed the quality checks and so is deleted. The other half of the pair may still be good and so it is put into the single <span class="notranslate">reads</span> file for the appropriate direction.</li>
+          </ol>
+
+        </blockquote>
+      </blockquote>
+    </li>
+  </ol>
+</blockquote>
+
+<h1 id="look-for-contamination-with-kraken2">Look for contamination with Kraken2</h1>
+
+<p>We should also look for contamination in our <span class="notranslate">reads</span>. Sometimes, other sources of <span class="notranslate">DNA</span> accidentally or inadvertantly get mixed in with our sample. Any <span class="notranslate">reads</span> from non-sample sources will confound our snp analysis. <strong>Kraken 2</strong> is an effective way of looking and which species is represented in our <span class="notranslate">reads</span> and so we can easily spot possible contamination of our sample.</p>
+
+<blockquote class="notranslate hands_on">
+  <h3 id="hands_on-hands-on-run-kraken2"><i class="fa fa-pencil" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Run Kraken2</h3>
+
+  <ol>
+    <li><strong>Kraken2</strong> <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
+      <ul>
+        <li><em>“Single or paired <span class="notranslate">reads</span>”</em>: <code class="highlighter-rouge">Paired</code></li>
+      </ul>
+      <ul>
+        <li><em>“Forward Strand”</em>: <code class="highlighter-rouge">Trimmomatic on https://zenodo.org/record/3531703/files/ERR550641_1.fastq.gz (R1 paired)</code></li>
+        <li><em>“Reverse Strand”</em>: <code class="highlighter-rouge">Trimmomatic on https://zenodo.org/record/3531703/files/ERR550641_2.fastq.gz (R2 paired)</code>
+    - <em>“Print scientific names instead of just taxids”</em>: <code class="highlighter-rouge">Yes</code>
+    - <em>“Enable quick operation”</em>: <code class="highlighter-rouge">Yes</code>
+    - Under <em>“Create reports”</em>:</li>
+        <li><em>“Print a report with aggregrate counts/clade to file”</em>: <code class="highlighter-rouge">Yes</code>
+    - <em>“Select a Kraken2 database”</em>: <code class="highlighter-rouge">Standard</code></li>
+      </ul>
+    </li>
+    <li>
+      <p>Inspect the report produced by Kraken</p>
+
+      <blockquote class="question">
+        <h3 id="question-questions-2"><i class="fa fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
+
+        <ol>
+          <li>Was there any significant contamination of the sample?</li>
+        </ol>
+
+        <blockquote class="solution">
+          <h3 id="solution-solution-2"><i class="fa fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+
+          <ol>
+            <li>95.5% of the <span class="notranslate">reads</span> here have been positively identified as <em>Mycobacterium</em>. The others found were bacteria from the same kingdom. There were no contaminating human or viral sequences detected.</li>
+          </ol>
+
+        </blockquote>
+      </blockquote>
+    </li>
+  </ol>
+</blockquote>
+
+<h1 id="find-variants-with-snippy">Find variants with Snippy</h1>
+
+<p>We will now run the Snippy tool on our <span class="notranslate">reads</span>, comparing it to the reference.</p>
+
+<p>Snippy is a tool for rapid bacterial SNP calling and core genome alignments. Snippy finds SNPs between a haploid reference genome and your NGS sequence <span class="notranslate">reads</span>. It will find both substitutions (snps) and insertions/deletions (indels).</p>
+
+<p>If we give Snippy an annotated reference, it will silently run a tool called SnpEff which will figure out the effect of any changes on the genes and other features. If we just give Snippy the reference sequence alone without the annotations, it will not run SnpEff.</p>
+
+<p>We have an annotated reference built from the inferred <em>M. tuberculosis</em> <a href="https://zenodo.org/record/3497110">ancestral reference genome</a> and the
+gene annotation from the <a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3">H37Rv strain</a> so will use it in this case.</p>
+
+<blockquote class="notranslate hands_on">
+  <h3 id="hands_on-hands-on-run-snippy"><i class="fa fa-pencil" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Run Snippy</h3>
+
+  <ol>
+    <li><strong>Snippy</strong> <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
+      <ul>
+        <li><em>“Will you select a reference genome from your history or use a built-in index?”</em>: <code class="highlighter-rouge">Use a genome from history and build index</code></li>
+        <li><em>“Use the following dataset as the reference sequence”</em>: <code class="highlighter-rouge">Mycobacterium_tuberculosis_ancestral_reference.gbk</code></li>
+        <li><em>“Single or Paired-end <span class="notranslate">reads</span>”</em>: <code class="highlighter-rouge">Paired</code></li>
+      </ul>
+      <ul>
+        <li><em>“Select first set of <span class="notranslate">reads</span>”</em>: <code class="highlighter-rouge">Trimmomatic on https://zenodo.org/record/3531703/files/ERR550641_1.fastq.gz (R1 paired)</code></li>
+        <li><em>“Select second set of <span class="notranslate">reads</span>”</em>: <code class="highlighter-rouge">Trimmomatic on https://zenodo.org/record/3531703/files/ERR550641_2.fastq.gz (R2 paired)</code>
+    - Under <em>“Advanced parameters”</em></li>
+        <li><em>“Minimum proportion for variant evidence”</em>: <code class="highlighter-rouge">0.1</code> (This is so we can see possible rare variants in our sample)
+    - Under <em>“Output selection”</em> select the following:</li>
+        <li><em>“The final annotated variants in VCF format”</em></li>
+        <li><em>“The alignments in BAM format”</em></li>
+        <li>Deselect any others.</li>
+      </ul>
+    </li>
+    <li>
+      <p>Inspect the Snippy VCF output</p>
+
+      <blockquote class="question">
+        <h3 id="question-questions-3"><i class="fa fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
+
+        <ol>
+          <li>
+            <p>What type of variant is the first one in the list?</p>
+          </li>
+          <li>
+            <p>What was the effect of this variant on the coding region it was found in?</p>
+          </li>
+        </ol>
+
+        <blockquote class="solution">
+          <h3 id="solution-solution-3"><i class="fa fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+
+          <ol>
+            <li>
+              <p>Substitution of a <code class="highlighter-rouge">C</code> to a <code class="highlighter-rouge">T</code></p>
+            </li>
+            <li>
+              <p>According to SnpEff, it’s a Synonymous change.</p>
+            </li>
+          </ol>
+
+        </blockquote>
+      </blockquote>
+    </li>
+  </ol>
+</blockquote>
+
+<p><strong>RECAP</strong>: So far we have taken our sample <span class="notranslate">reads</span>, cleaned them up a bit, checked for taxonomic assocation, compared the <span class="notranslate">reads</span> with our reference sequence and then called variants (SNPs and indels) between our sample and the reference genome. We have tried to mitigate a few errors along the way:</p>
+
+<ol>
+  <li>Sequencing errors: these were addressed by the quality trimming step</li>
+  <li>Sample contamination: we used <code class="highlighter-rouge">kraken2</code> to assess the extent of this problem in our sample</li>
+  <li>Appropriate choice of a reference genome: we used a genome that is inferred to be ancestral to all <em>M. tuberculosis</em> for our analysis and the diversity within Mtb is limited enough for us to rely on a single reference genome for the entire species.</li>
+  <li>Quality filtering in the <span class="notranslate">mapping</span> and variant calling stage: Tools like <code class="highlighter-rouge">bwa-mem</code> and <code class="highlighter-rouge">freebayes</code> judge the quality of their predictions, and <code class="highlighter-rouge">snippy</code> performs some filtering on variant calling predictions.</li>
+</ol>
+
+<h1 id="further-variant-filtering-and-tb-profiling">Further variant filtering and TB-profiling</h1>
+
+<p>We still cannot entirely trust the proposed variants. In particular, there are regions of the <em>M. tuberculosis</em> genome that are difficult to effectively map <span class="notranslate">reads</span> to. These include the PE/PPE/PGRS genes, which are highly repetitive, and the IS (insertion sequence sites). Secondly, when an insertion or deletion (indel) occurs in our sample relative to the reference it can cause apparent, but false, single nucleotide variants to appear near the indel. Finally where few <span class="notranslate">reads</span> map to a region of the reference genome, either because of a sequence deletion or because of a high GC content in the genomic region, we cannot be confident about the quality of variant calling in the region. The <code class="highlighter-rouge">TB Variant Filter</code> can help filter out variants based on a variety of criteria, including those listed above.</p>
+
+<blockquote class="notranslate hands_on">
+  <h3 id="hands_on-hands-on-run-snippy-1"><i class="fa fa-pencil" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Run Snippy</h3>
+  <ol>
+    <li><strong>TB Variant Filter</strong>: <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
+      <ul>
+        <li><em>“VCF file to be filter”</em>: <code class="highlighter-rouge">snippy on data XX, data XX, and data XX mapped <span class="notranslate">reads</span> vcf file</code></li>
+        <li><em>“Filters to apply”</em>: Select <code class="highlighter-rouge">Filter variants by region</code>, <code class="highlighter-rouge">Filter variants close to indels</code> and <code class="highlighter-rouge">Filter sites by read alignment depth</code>.</li>
+      </ul>
+    </li>
+    <li>
+      <p>Open the new VCF file.</p>
+
+      <blockquote class="question">
+        <h3 id="question-questions-4"><i class="fa fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
+
+        <ol>
+          <li>How many of the original variants have now been filtered out?</li>
+        </ol>
+
+        <blockquote class="solution">
+          <h3 id="solution-solution-4"><i class="fa fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+
+          <ol>
+            <li><code class="highlighter-rouge">197</code> (The difference in the number of lines between the snippy vcf file and the filtered vcf file.)</li>
+          </ol>
+
+        </blockquote>
+      </blockquote>
+    </li>
+  </ol>
+</blockquote>
+
+<p>Now that we have a collection of <em>high quality variants</em> we can search them against variants known to be associated with drug resistance. The <em>TB Profiler</em> tool does this using a database of variants curated by Dr Jody Phelan at the London School of Hygiene and Tropical Medicine. It can do its own <span class="notranslate">mapping</span> and variant calling but also accepts mapped <span class="notranslate">reads</span> in BAM format as input. It does its own variant calling and filtering.</p>
+
+<p>Finally, TB Variant Report use the COMBAT-TB <a href="https://neodb.sanbi.ac.za/browser/">neodb</a> <a href="https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btz658/5554700">database</a> of <em>M. tuberculosis</em> genome annotation to annotate variants in Mtb. It also takes the output of <em>TB Profiler</em> and produces a neat report that is easy to browse and search.</p>
+
+<blockquote class="notranslate hands_on">
+  <h3 id="hands_on-hands-on-run-tb-profiler"><i class="fa fa-pencil" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Run TB Profiler</h3>
+  <ol>
+    <li><strong>TB-Profiler profile</strong>: <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
+      <ul>
+        <li><em>“Input File Type”</em>: <code class="highlighter-rouge">BAM</code></li>
+      </ul>
+      <ul>
+        <li><em>“Bam”</em>: <code class="highlighter-rouge">snippy on data XX, data XX, and data X mapped <span class="notranslate">reads</span> (bam)</code></li>
+      </ul>
+
+      <p><strong>TB Profiler</strong> produces 3 output files, it’s own VCF file, a report about the sample including it’s likely lineages and any AMR found. There is also a <code class="highlighter-rouge">.json</code> formatted results file.</p>
+    </li>
+    <li><strong>TB Variant Report</strong>: <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
+      <ul>
+        <li><em>“Input SnpEff annotated M.tuberculosis VCF(s)”</em>: <code class="highlighter-rouge">TB-Profiler Profile VCF on data XX</code></li>
+        <li><em>“TBProfiler Drug Resistance Report (Optional)”</em>: <code class="highlighter-rouge">TB-Profiler Profile on data XX: Results.json</code></li>
+      </ul>
+    </li>
+    <li>
+      <p>Open the drug resistance and variant report html files.</p>
+
+      <blockquote class="question">
+        <h3 id="question-questions-5"><i class="fa fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
+
+        <ol>
+          <li>
+            <p>What was the final lineage of the sample we tested?</p>
+          </li>
+          <li>
+            <p>Were there any drug resistances found?</p>
+          </li>
+        </ol>
+
+        <blockquote class="solution">
+          <h3 id="solution-solution-5"><i class="fa fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+
+          <ol>
+            <li>
+              <p><code class="highlighter-rouge">4</code></p>
+            </li>
+            <li>
+              <p>No there were not.</p>
+            </li>
+          </ol>
+
+        </blockquote>
+      </blockquote>
+    </li>
+  </ol>
+</blockquote>
+
+<h1 id="view-a-snp-with-jbrowse">View a SNP with JBrowse</h1>
+
+<h1 id="view-snippy-output-in-jbrowse">View Snippy output in JBrowse</h1>
+
+<p>We could go through all of the variants in the VCF files and read them out of a text table, but this is onerous and doesn’t really give the context of the changes very well. It would be much nicer to have a visualisation of the SNPs and the other relevant data. In <span class="notranslate">Galaxy</span> we can use a tool called JBrowse.</p>
+
+<blockquote class="notranslate hands_on">
+  <h3 id="hands_on-hands-on-run-jbrowse"><i class="fa fa-pencil" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Run JBrowse</h3>
+
+  <ol>
+    <li><strong>JBrowse</strong> <i class="fa fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
+      <ul>
+        <li><em>“Reference genome to display”</em>: <code class="highlighter-rouge">Use a genome from history</code>
+          <ul>
+            <li><em>“Select the reference genome”</em>: <code class="highlighter-rouge">https://zenodo.org/record/3497110/files/MTB_ancestor_reference.fasta</code></li>
+          </ul>
+
+          <p>This sequence will be the reference against which annotations are displayed</p>
+        </li>
+        <li><em>“Produce Standalone Instance”</em>: <code class="highlighter-rouge">Yes</code></li>
+        <li><em>“Genetic Code”</em>: <code class="highlighter-rouge">11: The Bacterial, Archaeal and Plant Plastid Code</code></li>
+        <li><em>“JBrowse-in-<span class="notranslate">Galaxy</span> Action”</em>: <code class="highlighter-rouge">New JBrowse Instance</code></li>
+        <li>
+          <p><em>“Track Group”</em></p>
+
+          <p>We will now set up three different tracks - these are datasets displayed underneath the reference sequence (which is displayed as nucleotides in FASTA format). We will choose to display the sequence <span class="notranslate">reads</span> (the .bam file), the variants found by snippy (the .gff file) and the annotated reference genome (the wildtype.gff)</p>
+
+          <ul>
+            <li><strong>Track 1 - sequence <span class="notranslate">reads</span></strong>: Click on <code class="highlighter-rouge">Insert Track Group</code> and fill it with
+              <ul>
+                <li>“Track Category” to <code class="highlighter-rouge">sequence <span class="notranslate">reads</span></code></li>
+                <li>Click on <code class="highlighter-rouge">Insert Annotation Track</code> and fill it with
+                  <ul>
+                    <li>“Track Type” to <code class="highlighter-rouge">BAM Pileups</code></li>
+                    <li>“BAM Track Data” to <code class="highlighter-rouge">snippy on data XX, data XX, and data XX mapped <span class="notranslate">reads</span> (bam)</code></li>
+                    <li>“Autogenerate SNP Track” to <code class="highlighter-rouge">Yes</code></li>
+                    <li>“Track Visibility” to <code class="highlighter-rouge">On for new users</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><strong>Track 2 - variants</strong>: Click on <code class="highlighter-rouge">Insert Track Group</code> and fill it with
+              <ul>
+                <li>“Track Category” to <code class="highlighter-rouge">variants</code></li>
+                <li>Click on <code class="highlighter-rouge">Insert Annotation Track</code> and fill it with
+                  <ul>
+                    <li>“Track Type” to <code class="highlighter-rouge">VCF SNPs</code></li>
+                    <li>“SNP Track Data” to <code class="highlighter-rouge">TB Variant Filter on data XX</code></li>
+                    <li>“Track Visibility” to <code class="highlighter-rouge">On for new users</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><strong>Track 3 - annotated reference</strong>: Click on <code class="highlighter-rouge">Insert Track Group</code> and fill it with
+              <ul>
+                <li>“Track Category” to <code class="highlighter-rouge">annotated reference</code></li>
+                <li>Click on <code class="highlighter-rouge">Insert Annotation Track</code> and fill it with
+                  <ul>
+                    <li>“Track Type” to <code class="highlighter-rouge">GFF/GFF3/<span class="notranslate">BED</span>/GBK Features</code></li>
+                    <li>“GFF/GFF3/<span class="notranslate">BED</span> Track Data” to <code class="highlighter-rouge">https://zenodo.org/record/3531703/files/Mycobacterium_tuberculosis_h37rv.ASM19595v2.45.chromosome.Chromosome.gff3</code></li>
+                    <li>“JBrowse Track Type [Advanced]” to <code class="highlighter-rouge">Canvas Features</code></li>
+                    <li>Click on “JBrowse Styling Options [Advanced]”</li>
+                    <li>“JBrowse style.label” to <code class="highlighter-rouge">product</code></li>
+                    <li>“JBrowse style.description” to <code class="highlighter-rouge">product</code></li>
+                    <li>“Track Visibility” to <code class="highlighter-rouge">On for new users</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+
+<p>A new dataset will be created in your history, containing the JBrowse interactive visualisation. We will now view its contents and play with it by clicking the <i class="fa fa-eye" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-eye</span> (eye) icon of the <code class="highlighter-rouge">JBrowse on data XX and data XX - Complete</code> dataset. The JBrowse window will appear in the centre <span class="notranslate">Galaxy</span> panel.</p>
+
+<p>You can now click on the names of the tracks to add them in, try the vcf file and gff file. You can see where the variants are located and which genes they are in. If you click on the BAM file you can zoom right in to see the read alignments for each variant if you wish.</p>
+
+<p>We hope you enjoyed this tutorial!</p>
+
+
+                    
+                    <blockquote class="key_points">
+                        <h3><i class="fa fa-key" aria-hidden="true"></i><span class="visually-hidden">keypoints</span> Key points</h3>
+                        <ul>
+                            
+                            <li><p>Good example of methods used to perform variant calling in bacteria</p>
+</li>
+                            
+                        </ul>
+                    </blockquote>
+                    
+
+                    
+                    <h1 data-toc-skip>Useful literature</h1>
+                    <p>Further information, including links to documentation and original publications, regarding the tools, analysis techniques and the interpretation of results described in this tutorial can be found <a href="/training-material/topics/variant-analysis#references">here</a>.</p>
+                    
+
+                    
+
+                </div>
+            </div>
+        </div>
+
+        <h3><i class="fa fa-thumbs-up" aria-hidden="true"></i><span class="visually-hidden">congratulations</span> Congratulations on successfully completing this tutorial!</h3>
+
+        
+
+        
+
+        <hr>
+        <br>
+
+        <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+        <iframe id="feedback-google" class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=M. tuberculosis Variant Analysis (Variant Analysis)">Loading...
+        </iframe>
+
+        <blockquote class="feedback">
+            <h3><i class="fa fa-comments-o" aria-hidden="true"></i><span class="visually-hidden">feedback</span> Give us even more feedback on this content!</h3>
+            <p>To give us more detailed feedback about these materials, please take a moment to fill in the extended <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_GLZRpxZGAL9tN6DA1bE6WkNhmQdXT7B16TpOb-X4YwKUsQ/viewform?entry.1548889262=M. tuberculosis Variant Analysis (Variant Analysis)">Feedback Form</a>.</p>
+        </blockquote>
+    </section>
+</div>
+
+
+<footer>
+    <div class="container">
+        <p>
+            This material is the result of a collaborative work. Thanks to the
+            <a href="https://wiki.galaxyproject.org/Teach/GTN">Galaxy Training Network</a>
+            and all the <a href="/training-material/hall-of-fame">contributors</a> (Peter van Heusden, Simon Gladman, Thoba Lose)!
+        </p>
+        <p>
+            Found a typo? Something is wrong in this tutorial? Edit it on
+            <a href="https://github.com/galaxyproject/training-material/tree/master/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.md">GitHub</a>.
+        </p>
+    </div>
+</footer>
+
+    </body>
+    <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+    <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+    <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
+
+    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
+    <script type="text/javascript">
+    var snippets=document.querySelectorAll('div.highlight');
+    [].forEach.call(snippets,function(snippet){
+        snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+    });
+
+    var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
+        target:function(trigger){return trigger.nextElementSibling;
+    }});
+    </script>
+    
+</html>
