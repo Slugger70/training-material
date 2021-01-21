@@ -5,6 +5,10 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Galaxy Installation with Ansible</title>
+        
+            <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+
+        
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
@@ -136,6 +140,9 @@
                 </label>
                 <label data-value="halloween" class="btn btn-secondary">
                     <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
+                </label>
+                <label data-value="straya" class="btn btn-secondary">
+                    <input type="radio" name="options" id="downunder" autocomplete="off"> 🇦🇺
                 </label>
             </div>
 
@@ -331,7 +338,7 @@
 
         <div class="contributors-line">By: 
 
-<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Helena Rasche">Helena Rasche</a>, <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Nate Coraor">Nate Coraor</a>, <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Simon Gladman">Simon Gladman</a>, <a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/shiltemann" alt="Saskia Hiltemann">Saskia Hiltemann</a>, <a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/nsoranzo" alt="Nicola Soranzo">Nicola Soranzo</a>
+ <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Helena Rasche">Helena Rasche</a> <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Nate Coraor">Nate Coraor</a> <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Simon Gladman">Simon Gladman</a> <a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/shiltemann" alt="Saskia Hiltemann">Saskia Hiltemann</a> <a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/nsoranzo" alt="Nicola Soranzo">Nicola Soranzo</a>
 
 </div>
 
@@ -458,6 +465,10 @@
                     
                         
                     
+                        
+                    
+                        
+                    
                 
             </ul>
         
@@ -503,7 +514,7 @@
             </ul>
             
 
-            <p><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jan 8, 2021 </p>
+            <p><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jan 21, 2021 </p>
         </blockquote>
 
         <div class="container">
@@ -769,11 +780,11 @@ best practices and knowledge from previous admins codified for you.</p>
       <p>Create a new file in your working directory called <code class="language-plaintext highlighter-rouge">requirements.yml</code> and include the following contents:</p>
 
       <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">src</span><span class="pi">:</span> <span class="s"><span class="notranslate">galaxy</span>project.<span class="notranslate">galaxy</span></span>
-  <span class="na">version</span><span class="pi">:</span> <span class="s">0.9.6</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="s">0.9.7</span>
 <span class="pi">-</span> <span class="na">src</span><span class="pi">:</span> <span class="s"><span class="notranslate">galaxy</span>project.nginx</span>
   <span class="na">version</span><span class="pi">:</span> <span class="s">0.6.4</span>
 <span class="pi">-</span> <span class="na">src</span><span class="pi">:</span> <span class="s"><span class="notranslate">galaxy</span>project.postgresql</span>
-  <span class="na">version</span><span class="pi">:</span> <span class="s">1.0.2</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="s">1.0.3</span>
 <span class="pi">-</span> <span class="na">src</span><span class="pi">:</span> <span class="s">natefoo.postgresql_objects</span>
   <span class="na">version</span><span class="pi">:</span> <span class="m">1.1</span>
 <span class="pi">-</span> <span class="na">src</span><span class="pi">:</span> <span class="s">geerlingguy.pip</span>
@@ -783,7 +794,7 @@ best practices and knowledge from previous admins codified for you.</p>
 <span class="pi">-</span> <span class="na">src</span><span class="pi">:</span> <span class="s">use<span class="notranslate">galaxy</span>_eu.<span class="notranslate">galaxy</span>_systemd</span>
   <span class="na">version</span><span class="pi">:</span> <span class="s">0.1.4</span>
 <span class="pi">-</span> <span class="na">src</span><span class="pi">:</span> <span class="s">use<span class="notranslate">galaxy</span>_eu.certbot</span>
-  <span class="na">version</span><span class="pi">:</span> <span class="s">0.1.3</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="s">0.1.5</span>
 </code></pre></div>      </div>
 
       <blockquote class="details">
@@ -914,7 +925,7 @@ A: They  are correlated (because generally new <span class="notranslate">Galaxy<
 
 <p>PostgreSQL maintains its own user database apart from the system user database. By default, PostgreSQL uses the “peer” authentication method which allows access for system users with matching PostgreSQL use<span class="notranslate">rna</span>mes (other authentication mechanisms are available, see the <a href="https://www.postgresql.org/docs/current/static/client-authentication.html">PostgreSQL Client Authentication documentation</a>.</p>
 
-<p>For this tutorial, we will use the default “peer” authentication, so we need to create a PostgreSQL user matching the system user under which <span class="notranslate">Galaxy</span> will be running, i.e. <code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span></code>. This is normally done with the PostgreSQL <code class="language-plaintext highlighter-rouge">createuser</code> command, and it must be run as the <code class="language-plaintext highlighter-rouge">postgres</code> user. In our case, we will use the <code class="language-plaintext highlighter-rouge">natefoo.postgresql_objects</code> role to handle this step.</p>
+<p>For this tutorial, we will use the default “peer” authentication, so we need to create a PostgreSQL user matching the system user under which <span class="notranslate">Galaxy</span> will be running, i.e. <code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span></code>. This is normally done with the PostgreSQL <code class="language-plaintext highlighter-rouge">createuser</code> command, and it must be run as the <code class="language-plaintext highlighter-rouge">postgres</code> user. In our case, we will use the <code class="language-plaintext highlighter-rouge">natefoo.postgresql_objects</code> role to handle this step. Additionally we’re setting a couple of variables to control the automatic backups, they’ll be placed in the /data/backups folder next to our user uploaded <span class="notranslate">Galaxy</span> data.</p>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-installing-postgresql"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Installing PostgreSQL</h3>
@@ -935,6 +946,9 @@ A: They  are correlated (because generally new <span class="notranslate">Galaxy<
 <span class="na">postgresql_objects_databases</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s"><span class="notranslate">galaxy</span></span>
     <span class="na">owner</span><span class="pi">:</span> <span class="s"><span class="notranslate">galaxy</span></span>
+<span class="c1"># PostgreSQL Backups</span>
+<span class="na">postgresql_backup_dir</span><span class="pi">:</span> <span class="s">/data/backups</span>
+<span class="na">postgresql_backup_local_dir</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~postgres/backups"</span>
 </code></pre></div>      </div>
     </li>
     <li>
@@ -1308,7 +1322,7 @@ We’ll start by assuming you’re running the command</p>
 +    - <span class="notranslate">galaxy</span>project.<span class="notranslate">galaxy</span>
 +    - role: uchida.miniconda
 +      become: true
-+      become_user: ""
++      become_user: "{{ <span class="notranslate">galaxy</span>_user.name }}"
 </span></code></pre></div>      </div>
 
       <blockquote class="tip">
@@ -1368,11 +1382,6 @@ We’ll start by assuming you’re running the command</p>
             <td>The git reference to check out, which in this case is the branch for <span class="notranslate">Galaxy</span> Release 20.09</td>
           </tr>
           <tr>
-            <td><code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_config_style</code></td>
-            <td><code class="language-plaintext highlighter-rouge">yaml</code></td>
-            <td>We want to opt-in to the new style YAML configuration.</td>
-          </tr>
-          <tr>
             <td><code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_force_checkout</code></td>
             <td><code class="language-plaintext highlighter-rouge">true</code></td>
             <td>If we make any modifications to the <span class="notranslate">Galaxy</span> codebase, they will be removed. This way we know we’re getting an unmodified <span class="notranslate">Galaxy</span> and no one has made any unexpected changes to the codebase.</td>
@@ -1397,7 +1406,7 @@ We’ll start by assuming you’re running the command</p>
 
       <blockquote class="tip">
         <h3 id="tip-different-galaxy-releases"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Different <span class="notranslate">Galaxy</span> Releases!</h3>
-        <p>In the time between this tutorial was last updated (2021-01-08), and when you are now reading it, one or more new releases of <span class="notranslate">Galaxy</span> may have occured.</p>
+        <p>In the time between this tutorial was last updated (2021-01-21), and when you are now reading it, one or more new releases of <span class="notranslate">Galaxy</span> may have occured.</p>
 
         <p>If you wish to use a different version of <span class="notranslate">Galaxy</span> than the one listed, you can do so, but there is no guarantee this tutorial will work without modifications.</p>
 
@@ -1419,7 +1428,6 @@ We’ll start by assuming you’re running the command</p>
 +<span class="notranslate">galaxy</span>_root: /srv/<span class="notranslate">galaxy</span>
 +<span class="notranslate">galaxy</span>_user: {name: <span class="notranslate">galaxy</span>, shell: /bin/bash}
 +<span class="notranslate">galaxy</span>_commit_id: release_20.09
-+<span class="notranslate">galaxy</span>_config_style: yaml
 +<span class="notranslate">galaxy</span>_force_checkout: true
 +miniconda_prefix: "{{ <span class="notranslate">galaxy</span>_tool_dependency_dir }}/_conda"
 +miniconda_version: 4.7.12
@@ -1447,7 +1455,7 @@ We’ll start by assuming you’re running the command</p>
 
       <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
-</span><span class="p">@@ -23,3 +23,12 @@</span> <span class="notranslate">galaxy</span>_config_style: yaml
+</span><span class="p">@@ -23,3 +23,12 @@</span>
  <span class="notranslate">galaxy</span>_force_checkout: true
  miniconda_prefix: "{{ <span class="notranslate">galaxy</span>_tool_dependency_dir }}/_conda"
  miniconda_version: 4.7.12
@@ -2727,6 +2735,11 @@ In a training setting there is no need to request certificates that will be trus
     <span class="nt">&lt;/tools&gt;</span>
 <span class="nt">&lt;/job_conf&gt;</span>
 </code></pre></div>      </div>
+
+      <blockquote class="tip">
+        <h3 id="tip-workers4"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> workers=4</h3>
+        <p>In the local runner, <code class="language-plaintext highlighter-rouge">workers="4"</code> means “number of jobs that can be running at one time”. For every other job runner, it means the number of th<span class="notranslate">reads</span> that are created to start/manage/finish jobs. E.g. if you are in a class and 50 people submit jobs, then there are four th<span class="notranslate">reads</span> that can handle these jobs at once. But additional job handlers can be more useful as well.</p>
+      </blockquote>
     </li>
     <li>
       <p>Inform the <code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>project.<span class="notranslate">galaxy</span></code> role of where you would like the <code class="language-plaintext highlighter-rouge">job_conf.xml</code> to reside, by setting it in your <code class="language-plaintext highlighter-rouge">group_vars/<span class="notranslate">galaxy</span>servers.yml</code>:</p>
@@ -2745,19 +2758,19 @@ In a training setting there is no need to request certificates that will be trus
 
       <p>And then deploy the new config file using the <code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_config_templates</code> var (also from the <code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>project.<span class="notranslate">galaxy</span></code> role) in your group vars:</p>
 
-      <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span> <span class="s">a/group_vars/<span class="notranslate">galaxy</span>servers.yml</span>
-<span class="s">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml</span>
-<span class="err">@@</span> <span class="s">-59,6 +59,10 @@ <span class="notranslate">galaxy</span>_config</span><span class="pi">:</span>
-       <span class="pi">-</span> <span class="s">lib/<span class="notranslate">galaxy</span>/main.py</span>
-     <span class="na">farm</span><span class="pi">:</span> <span class="s">job-handlers:1,2</span>
+      <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
+</span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
+</span><span class="p">@@ -59,6 +59,10 @@</span> <span class="notranslate">galaxy</span>_config:
+       - lib/<span class="notranslate">galaxy</span>/main.py
+     farm: job-handlers:1,2
 
-<span class="s">+<span class="notranslate">galaxy</span>_config_templates</span><span class="pi">:</span>
-<span class="s">+  - src</span><span class="pi">:</span> <span class="s">templates/<span class="notranslate">galaxy</span>/config/job_conf.xml.j2</span>
-<span class="s">+    dest</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{</span><span class="nv"> </span><span class="s"><span class="notranslate">galaxy</span>_config.<span class="notranslate">galaxy</span>.job_config_file</span><span class="nv"> </span><span class="s">}}"</span>
-<span class="s">+</span>
- <span class="s"># systemd</span>
- <span class="s"><span class="notranslate">galaxy</span>_systemd_mode</span><span class="pi">:</span> <span class="s">mule</span>
- <span class="s"><span class="notranslate">galaxy</span>_zergpool_listen_addr</span><span class="pi">:</span> <span class="s">127.0.0.1:8080</span>
++<span class="notranslate">galaxy</span>_config_templates:
+<span class="gi">+  - src: templates/<span class="notranslate">galaxy</span>/config/job_conf.xml.j2
++    dest: "{{ <span class="notranslate">galaxy</span>_config.<span class="notranslate">galaxy</span>.job_config_file }}"
++
+</span> # systemd
+ <span class="notranslate">galaxy</span>_systemd_mode: mule
+ <span class="notranslate">galaxy</span>_zergpool_listen_addr: 127.0.0.1:8080
 </code></pre></div>      </div>
     </li>
     <li>
@@ -2893,7 +2906,6 @@ changed: [gat-88.training.<span class="notranslate">galaxy</span>project.eu]
 <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="p">@@ -345,7 +345,7 @@</span> <span class="notranslate">galaxy</span>_instance_hostname: use<span class="notranslate">galaxy</span>.eu
- <span class="notranslate">galaxy</span>_config_style: ini
 
  <span class="notranslate">galaxy</span>_repo: 'https://github.com/use<span class="notranslate">galaxy</span>-eu/<span class="notranslate">galaxy</span>.git'
 <span class="gd">-<span class="notranslate">galaxy</span>_commit_id: 'release_19.05'
@@ -2941,7 +2953,7 @@ Additionally you can automatically send failing job error reports, even if users
   <li><code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_venv_dir</code></li>
 </ul>
 
-<p>Some of these can be worked around, by running the portions of the roles that deploy these directories on the shared filesystem. Then <span class="notranslate">Galaxy</span> and the shared filesystem can run off of two difference copies of them, if that is better for performance:</p>
+<p>Some of these can be worked around, by running the portions of the roles that deploy these directories on the shared filesystem. Then <span class="notranslate">Galaxy</span> and the shared filesystem can run off of two different copies of them, if that is better for performance:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_server_dir</code></li>
@@ -3039,7 +3051,7 @@ Additionally you can automatically send failing job error reports, even if users
     title = "Galaxy Installation with Ansible (Galaxy Training Materials)",
     year = "2021",
     month = "01",
-    day = "08"
+    day = "21"
     url = "\url{/training-material/topics/admin/tutorials/ansible-galaxy/tutorial.html}",
     note = "[Online; accessed TODAY]"
 }

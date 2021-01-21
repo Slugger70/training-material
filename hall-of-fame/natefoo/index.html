@@ -5,6 +5,10 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>GTN Contributor: Nate Coraor</title>
+        
+            <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+
+        
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
@@ -88,6 +92,9 @@
                 </label>
                 <label data-value="halloween" class="btn btn-secondary">
                     <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
+                </label>
+                <label data-value="straya" class="btn btn-secondary">
+                    <input type="radio" name="options" id="downunder" autocomplete="off"> 🇦🇺
                 </label>
             </div>
 
@@ -288,6 +295,20 @@
 								Galaxy Server administration
 							</a>
 							/
+							<a href="/training-material//topics/admin/tutorials/job-destinations/tutorial.html">
+							Mapping Jobs to Destinations
+							</a>
+						</li>
+						
+					
+						
+						<li>
+							
+							
+							<a href="/training-material/topics/admin">
+								Galaxy Server administration
+							</a>
+							/
 							<a href="/training-material//topics/admin/tutorials/external-auth/tutorial.html">
 							External Authentication
 							</a>
@@ -352,6 +373,8 @@
 							Galaxy Installation with Ansible
 							</a>
 						</li>
+						
+					
 						
 					
 						
@@ -929,6 +952,20 @@
 								Galaxy Server administration
 							</a>
 							/
+							<a href="/training-material//topics/admin/tutorials/data-library/slides.html">
+							Storage Management
+							</a>
+						</li>
+						
+					
+						
+						<li>
+							
+							
+							<a href="/training-material/topics/admin">
+								Galaxy Server administration
+							</a>
+							/
 							<a href="/training-material//topics/admin/tutorials/object-store/slides.html">
 							Storage Management
 							</a>
@@ -1110,6 +1147,12 @@ var topics = [
 	
 
 	
+		
+		
+		"Galaxy Server administration",
+	
+
+	
 
 	
 
@@ -1142,282 +1185,11 @@ var topics = [
 	
 
 	
-		
-		
-		"Galaxy Server administration",
-	
 
 	
 		
 		
 		"Galaxy Server administration",
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-	
-
-	
-
-	
-
-	
-
 	
 
 	
@@ -1479,6 +1251,279 @@ var topics = [
 	
 
 	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+		
+		"Galaxy Server administration",
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
 		
 		
 		"Galaxy Server administration",
@@ -1560,6 +1605,12 @@ var topics = [
 
 	
 
+	
+
+	
+		
+		
+		"Galaxy Server administration",
 	
 
 	
@@ -1710,7 +1761,7 @@ var chart = new Chart(ctx, {
         <p>
     The content of the tutorials and website is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/00e128e6605fc6701360c526f42a064c0e38553e">00e128e6605fc6701360c526f42a064c0e38553e</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/fb4b65b0b97836619ccea5aa9ff3093fcc8f1e95">fb4b65b0b97836619ccea5aa9ff3093fcc8f1e95</a></p>
     </div>
 </footer>
 

@@ -180,7 +180,19 @@ class: center, middle, inverse
 
 ---
 
+<img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" style="height: 8em;"/>
+
 # Server Maintenance and Backups
+
+
+<div class="contributors-line">
+
+
+ <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Nate Coraor">Nate Coraor</a> <a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bgruening" alt="Björn Grüning">Björn Grüning</a> <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Simon Gladman">Simon Gladman</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Helena Rasche">Helena Rasche</a>
+
+
+</div>
+
 
 
 
@@ -228,7 +240,12 @@ slide to change on the other. Useful when presenting.
 
 # Server Maintenance
 
+???
+
+- Server Maintenance
+
 ---
+
 ## Dataset Cleanup
 
 Can only delete (or purge) dataset when all 'associations' pointing at it have been marked `deleted`.
@@ -345,7 +362,6 @@ class: reduce70
 - Take advantage of this to give your users some time to backup their data before you reclaim the space.
 
 ---
-class: left
 
 ## Other disk space cleanups
 
@@ -354,16 +370,18 @@ class: left
 - `tmpwatch` your `new_file_path`
   - `/usr/bin/tmpwatch -v --mtime --dirmtime 7d /srv/galaxy/var/tmp`
 
-
 ???
 
 - Galaxy generates intermediate data as part of the job execution.
 - These should be automatically cleaned up unless you change the cleanup_job flag in galaxy's configuration.
 
 ---
-class: left, reduce90
 
 # Backups
+
+???
+
+- Backups
 
 ---
 class: left
@@ -459,7 +477,7 @@ This material is the result of a collaborative work. Thanks to the [Galaxy Train
 <div class="contributors-line">
 
 
-<a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Nate Coraor">Nate Coraor</a>, <a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bgruening" alt="Björn Grüning">Björn Grüning</a>, <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Simon Gladman">Simon Gladman</a>, <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Helena Rasche">Helena Rasche</a>
+ <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Nate Coraor">Nate Coraor</a> <a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bgruening" alt="Björn Grüning">Björn Grüning</a> <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Simon Gladman">Simon Gladman</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Helena Rasche">Helena Rasche</a>
 
 
 </div>

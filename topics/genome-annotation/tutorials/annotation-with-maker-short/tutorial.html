@@ -5,6 +5,10 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Genome annotation with Maker (short)</title>
+        
+            <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+
+        
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
@@ -136,6 +140,9 @@
                 </label>
                 <label data-value="halloween" class="btn btn-secondary">
                     <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
+                </label>
+                <label data-value="straya" class="btn btn-secondary">
+                    <input type="radio" name="options" id="downunder" autocomplete="off"> 🇦🇺
                 </label>
             </div>
 
@@ -283,7 +290,7 @@
 
         <div class="contributors-line">By: 
 
-<a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/abretaud" alt="Anthony Bretaudeau">Anthony Bretaudeau</a>
+ <a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/abretaud" alt="Anthony Bretaudeau">Anthony Bretaudeau</a>
 
 </div>
 
@@ -433,6 +440,10 @@
         
     
         
+    
+        
+    
+        
         <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
             Galaxy Africa
         </a>
@@ -466,6 +477,8 @@
         <a class="dropdown-item" href="https://humancellatlas.usegalaxy.eu/" title="Human Cell Atlas">
             Human Cell Atlas
         </a>
+        
+    
         
     
         
@@ -609,10 +622,7 @@ to learn how to perform the training steps, please see the <a href="/training-ma
   <li><a href="#annotation-statistics" id="markdown-toc-annotation-statistics">Annotation statistics</a></li>
   <li><a href="#busco" id="markdown-toc-busco">Busco</a></li>
   <li><a href="#improving-gene-naming" id="markdown-toc-improving-gene-naming">Improving gene naming</a></li>
-  <li><a href="#visualising-the-results" id="markdown-toc-visualising-the-results">Visualising the results</a>    <ol>
-      <li><a href="#more-visualisation" id="markdown-toc-more-visualisation">More visualisation</a></li>
-    </ol>
-  </li>
+  <li><a href="#visualising-the-results" id="markdown-toc-visualising-the-results">Visualising the results</a></li>
   <li><a href="#whats-next" id="markdown-toc-whats-next">What’s next?</a></li>
 </ol>
 
@@ -744,7 +754,7 @@ https://zenodo.org/api/files/647ad552-19a8-46d9-aad8-f81f56860582/snap_training_
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/1.0.1" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/1.0.1"><strong>Fasta Statistics</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/1.0.1</span></span>  with the following parameters:
       <ul>
-        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Sequences to analyse”</em>: select <code class="language-plaintext highlighter-rouge">S_pombe_chrIII.fasta</code> from your history</li>
+        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“fasta or multifasta file”</em>: select <code class="language-plaintext highlighter-rouge">S_pombe_chrIII.fasta</code> from your history</li>
       </ul>
     </li>
   </ol>
@@ -836,8 +846,8 @@ As we only analysed chromosome III, many BUSCO genes are missing, but still ~100
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11"><strong>Maker</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11</span></span>  with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Genome to annotate”</em>: select <code class="language-plaintext highlighter-rouge">S_pombe_chrIII.fasta</code> from your history</li>
-        <li><em>“Re-annotate using an existing Maker annotation”</em>: <code class="language-plaintext highlighter-rouge">No</code></li>
         <li><em>“Organism type”</em>: <code class="language-plaintext highlighter-rouge">Eukaryotic</code></li>
+        <li><em>“Re-annotate using an existing Maker annotation”</em>: <code class="language-plaintext highlighter-rouge">No</code></li>
         <li>In <em>“EST evidences (for best results provide at least one of these)”</em>:
           <ul>
             <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“ESTs or assembled c<span class="notranslate">DNA</span>”</em>: <code class="language-plaintext highlighter-rouge">S_pombe_trinity_assembly.fasta</code></li>
@@ -983,7 +993,7 @@ As we only analysed chromosome III, many BUSCO genes are missing, but still ~100
   <blockquote class="solution">
     <h3 id="solution-solution-2"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
 
-    <p>128 complete single-copy, 0 duplicated, 10 fragmented, 620 missing. This is in fact better than what BUSCO found in the genome sequence. That means the quality of this annotation is very good (by default BUSCO in genome mode can miss some genes, the advanced options can improve this at the cost of computing time).</p>
+    <p>128 complete single-copy, 0 duplicated, 10 fragmented, 620 missing. This is in fact better than what BUSCO found in the genome sequence. That means the quality of this annotation is very good (by default BUSCO in genome mode can miss some genes, the advanced options can improve this at the cost of computing time). (Results can be very slightly different in your own history, it’s normal).</p>
 
   </blockquote>
 
@@ -1000,8 +1010,8 @@ As we only analysed chromosome III, many BUSCO genes are missing, but still ~100
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/maker_map_ids/maker_map_ids/2.31.11" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/maker_map_ids/maker_map_ids/2.31.11"><strong>Map annotation ids</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/maker_map_ids/maker_map_ids/2.31.11</span></span>  with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Maker annotation where to change ids”</em>: <code class="language-plaintext highlighter-rouge">final annotation</code> (output of <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11"><strong>Maker</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11</span></span> )</li>
-        <li><em>“Prefix for ids”</em>: <code class="language-plaintext highlighter-rouge">"TEST_"</code></li>
-        <li><em>“Justify numeric ids to this length”</em>: <code class="language-plaintext highlighter-rouge">"6"</code></li>
+        <li><em>“Prefix for ids”</em>: <code class="language-plaintext highlighter-rouge">TEST_</code></li>
+        <li><em>“Justify numeric ids to this length”</em>: <code class="language-plaintext highlighter-rouge">6</code></li>
       </ul>
 
       <blockquote class="comment">
@@ -1044,13 +1054,10 @@ As we only analysed chromosome III, many BUSCO genes are missing, but still ~100
                     <li>In <em>“1: Annotation Track”</em>:
                       <ul>
                         <li>
-                          <p><em>“Track Type”</em>: <code class="language-plaintext highlighter-rouge">GFF/GFF3/<span class="notranslate">BED</span>/GBK Features</code></p>
+                          <p><em>“Track Type”</em>: <code class="language-plaintext highlighter-rouge">GFF/GFF3/<span class="notranslate">BED</span> Features</code></p>
                         </li>
                         <li>
-                          <p><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“GFF/GFF3/<span class="notranslate">BED</span> Track Data”</em>: select the final annotation of your <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11"><strong>Maker</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11</span></span>  run</p>
-                        </li>
-                        <li>
-                          <p><em>“This is match/match_part data”</em>: <code class="language-plaintext highlighter-rouge">No</code></p>
+                          <p><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“GFF/GFF3/<span class="notranslate">BED</span> Track Data”</em>: select the output of <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/maker_map_ids/maker_map_ids/2.31.11" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/maker_map_ids/maker_map_ids/2.31.11"><strong>Map annotation ids</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/maker_map_ids/maker_map_ids/2.31.11</span></span></p>
                         </li>
                       </ul>
                     </li>
@@ -1066,63 +1073,7 @@ As we only analysed chromosome III, many BUSCO genes are missing, but still ~100
 
 </blockquote>
 
-<p>Enable the different tracks on the left side of JBrowse, then navigate along the genome and look at the genes that were predicted by Maker.</p>
-
-<h2 id="more-visualisation">More visualisation</h2>
-
-<p>You might want to understand how a specific gene model was predicted by Maker. You can easily visualise the evidences used by Maker (EST alignments, protein alignments, ab-initio predictions, …) by using JBrowse too.</p>
-
-<blockquote class="notranslate hands_on">
-  <h3 id="hands_on-hands-on-visualize-evidences-in-jbrowse"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Visualize evidences in JBrowse</h3>
-
-  <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.10+galaxy0" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.10+galaxy0"><strong>JBrowse</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.10+<span class="notranslate">galaxy</span>0</span></span>  with the following parameters:
-      <ul>
-        <li><em>“Reference genome to display”</em>: <code class="language-plaintext highlighter-rouge">Use a genome from history</code>
-          <ul>
-            <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select the reference genome”</em>: select <code class="language-plaintext highlighter-rouge">S_pombe_chrIII.fasta</code> from your history</li>
-          </ul>
-        </li>
-        <li><em>“JBrowse-in-<span class="notranslate">Galaxy</span> Action”</em>: <code class="language-plaintext highlighter-rouge">Update existing JBrowse Instance</code></li>
-        <li><em>“Previous JBrowse Instance”</em>: select the result from the previous <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.10+galaxy0" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.10+galaxy0"><strong>JBrowse</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.10+<span class="notranslate">galaxy</span>0</span></span>  run</li>
-        <li>In <em>“Track Group”</em>:
-          <ul>
-            <li>Click on <em>“Insert Track Group”</em>:</li>
-            <li>In <em>“1: Track Group”</em>:
-              <ul>
-                <li><em>“Track Category”</em>: <code class="language-plaintext highlighter-rouge">Maker evidences</code></li>
-                <li>In <em>“Annotation Track”</em>:
-                  <ul>
-                    <li>Click on <em>“Insert Annotation Track”</em>:</li>
-                    <li>In <em>“1: Annotation Track”</em>:
-                      <ul>
-                        <li>
-                          <p><em>“Track Type”</em>: <code class="language-plaintext highlighter-rouge">GFF/GFF3/<span class="notranslate">BED</span>/GBK Features</code></p>
-                        </li>
-                        <li>
-                          <p><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“GFF/GFF3/<span class="notranslate">BED</span> Track Data”</em>: select the “evidences” output of your <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11"><strong>Maker</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/maker/maker/2.31.11</span></span>  run</p>
-                        </li>
-                        <li>
-                          <p><em>“This is match/match_part data”</em>: <code class="language-plaintext highlighter-rouge">Yes</code></p>
-                          <ul>
-                            <li><em>“Match Part Feature Type”</em>: Leave empty</li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ol>
-
-</blockquote>
-
-<p>You will now see new tracks displaying all the evidences used by Maker to generate consensus gene models.</p>
+<p>Enable the track on the left side of JBrowse, then navigate along the genome and look at the genes that were predicted by Maker.</p>
 
 <h1 class="no_toc" id="conclusion">Conclusion</h1>
 
